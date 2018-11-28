@@ -1,11 +1,33 @@
+@using TravelLog.Models;
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello</title>
-  </head>
-  <body>
-    <h1>Hello</h1>
+    <head>
+        <title>Travel Log</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    </head>
+    <body>
+        <div class="container">
+            <h1>To Do List</h1>
+            <ul>
+              @if (Model.Count == 0)
+              {
+                <p>You have nowhere in your travels.</p>
+              }
+              @if(Model.Count != 0)
+              {
+                @foreach (Place city in Model)
+                {
+                    <li>@city.GetCityName()</li>
+                }
+              }
+            </ul>
+            <a href="/places/new">Add a new task</a>
 
-  </body>
+            <form class="" action="/places/delete" method="post">
+              <button type="submit" name="button">Clear All Tasks</button>
+            </form>
+
+        </div>
+    </body>
 </html>
