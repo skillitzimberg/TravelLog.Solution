@@ -24,22 +24,14 @@ namespace TravelLog.Tests
     [TestMethod]
     public void GetCityName_ReturnCityName_String()
     {
+      string expectedJournalEntry = "I arrived in Ho Chi Minh today";
       string expectedCityName = "Ho Chi Minh";
-      Place newPlace = new Place(expectedCityName, "Did a thing.");
+      Place newPlace = new Place(expectedCityName, expectedJournalEntry);
 
       string actualCityName = newPlace.GetCityName();
+      string actualJournalEntry = newPlace.GetJournalEntry();
 
       Assert.AreEqual(expectedCityName, actualCityName);
-    }
-
-    [TestMethod]
-    public void GetJournalEntry_ReturnJournalEntry_String()
-    {
-      string expectedJournalEntry = "I arrived in Ho Chi Minh today";
-      Place newJournalEntry = new Place("Ho Chi Minh", expectedJournalEntry);
-
-      string actualJournalEntry = newJournalEntry.GetJournalEntry();
-
       Assert.AreEqual(expectedJournalEntry, actualJournalEntry);
     }
 

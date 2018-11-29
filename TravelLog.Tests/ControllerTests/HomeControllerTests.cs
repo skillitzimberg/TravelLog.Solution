@@ -20,7 +20,7 @@ namespace TravelLog.Tests
 
         //Assert
         Assert.IsInstanceOfType(indexView, typeof(ViewResult));
-    }
+      }
     //
     // [TestMethod]
     // public void Index_HasCorrectModelType_ItemList()
