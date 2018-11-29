@@ -35,6 +35,8 @@ namespace TravelLog.Tests
       Assert.AreEqual(expectedJournalEntry, actualJournalEntry);
     }
 
+    
+
   }
 
 }
